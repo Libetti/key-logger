@@ -2,16 +2,17 @@ package main
 
 import (
 	"fmt"
+	"keylogger/pkg/winprocessutils"
 	"log"
 )
 
 func main() {
 
-	procs, err := Processes()
+	procs, err := winprocessutils.Processes()
 	if err != nil {
 		log.Fatal(err)
 	}
-	chrome := findProcessByName(procs, "chrome.exe")
+	chrome := winprocessutils.FindProcessByName(procs, "chrome.exe")
 	if chrome != nil {
 		// found it
 		fmt.Println("Chrome is open!")
