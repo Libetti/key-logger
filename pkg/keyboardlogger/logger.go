@@ -1,4 +1,4 @@
-package logger
+package keyboardlogger
 
 import (
 	"fmt"
@@ -8,7 +8,7 @@ import (
 	"github.com/eiannone/keyboard"
 )
 
-func logger() {
+func KeyboardLogger() {
 	file, err := os.Create("log.txt")
 	if err != nil {
 		log.Fatal(err)

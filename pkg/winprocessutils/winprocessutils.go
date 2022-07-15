@@ -1,4 +1,4 @@
-package listprocesses
+package winprocessutils
 
 import (
 	"strings"
