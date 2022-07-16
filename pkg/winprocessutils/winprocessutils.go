@@ -33,7 +33,6 @@ func Processes() ([]WindowsProcess, error) {
 
 	results := make([]WindowsProcess, 0, 50)
 	for {
-		println(entry)
 		results = append(results, newWindowsProcess(&entry))
 
 		err = windows.Process32Next(handle, &entry)
@@ -48,7 +47,7 @@ func Processes() ([]WindowsProcess, error) {
 }
 func FindProcessByName(processes []WindowsProcess, name string) *WindowsProcess {
 	for _, p := range processes {
-		if strings.ToLower(p.Exe) == strings.ToLower(name) {
+		if strings.EqualFold(p.Exe, name) {
 			return &p
 		}
 	}
