@@ -1,3 +1,12 @@
-dwasdwdwad
-
-println(entry)
+2022-07-15 23:55:19.2782336 -0400 EDT m=+1.579912001: WriteChar = key_Space: String = anthony 
+ 
+2022-07-15 23:55:20.6213797 -0400 EDT m=+2.923058101: WriteChar = key_Space: String = libetti 
+ 
+2022-07-15 23:55:21.7431278 -0400 EDT m=+4.044806201: WriteChar = key_Tab: String = tone 
+ 
+2022-07-15 23:55:23.2479271 -0400 EDT m=+5.549605501: WriteChar = key_Enter: String =  
+ 
+2022-07-15 23:55:23.9492738 -0400 EDT m=+6.250952201: WriteChar = key_Enter: String = hey 
+ 
+2022-07-15 23:55:24.5172498 -0400 EDT m=+6.818928201: WriteChar = key_Enter: String = hey 
+ 

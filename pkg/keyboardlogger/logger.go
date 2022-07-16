@@ -4,12 +4,13 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"time"
 
 	"github.com/eiannone/keyboard"
 )
 
 func StartKeyboardLogger() {
-	file, err := os.Create("log.txt")
+	file, err := os.OpenFile("log.txt", os.O_APPEND|os.O_WRONLY, 0644)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -35,15 +36,15 @@ func StartKeyboardLogger() {
 
 		switch key {
 		case keyboard.KeySpace:
-			file.WriteString(currentStr + "\n")
+			file.WriteString(fmt.Sprintf("%s: WriteChar = %s: String = %s \n \n", time.Now().String(), "key_Space", currentStr))
 			currentStr = ""
 			continue
 		case keyboard.KeyEnter:
-			file.WriteString(currentStr + "\n")
+			file.WriteString(fmt.Sprintf("%s: WriteChar = %s: String = %s \n \n", time.Now().String(), "key_Enter", currentStr))
 			currentStr = ""
 			continue
 		case keyboard.KeyTab:
-			file.WriteString(currentStr + "\n")
+			file.WriteString(fmt.Sprintf("%s: WriteChar = %s: String = %s \n \n", time.Now().String(), "key_Tab", currentStr))
 			currentStr = ""
 			continue
 		}
