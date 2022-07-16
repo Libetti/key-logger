@@ -8,7 +8,7 @@ import (
 	"github.com/eiannone/keyboard"
 )
 
-func KeyboardLogger() {
+func StartKeyboardLogger() {
 	file, err := os.Create("log.txt")
 	if err != nil {
 		log.Fatal(err)
@@ -51,4 +51,8 @@ func KeyboardLogger() {
 		currentStr = currentStr + formattedStr
 		fmt.Printf("You pressed: rune %q, key %X\r\n", char, key)
 	}
+}
+
+func StopKeyboardLogger() {
+	_ = keyboard.Close()
 }
