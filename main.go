@@ -12,7 +12,8 @@ import (
 func main() {
 	var loggerRunning bool = false
 	var logsDirectory string = ""
-	if len(os.Args[1]) > 0 {
+	fmt.Println(len(os.Args))
+	if len(os.Args) > 1 {
 		logsDirectory = os.Args[1]
 	} else {
 		home, err := os.UserHomeDir()
@@ -44,7 +45,6 @@ func main() {
 				loggerRunning = true
 			}
 		} else {
-			loggerRunning = false
 			if loggerRunning {
 				go keyboardlogger.StopKeyboardLogger()
 				loggerRunning = false

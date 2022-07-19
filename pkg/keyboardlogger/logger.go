@@ -22,10 +22,12 @@ func StartKeyboardLogger(logsDirectory string) {
 	}
 
 	currentStr := ""
+	fmt.Printf("On \n")
+
 	for {
 		char, key, err := keyboard.GetKey()
 		if err != nil {
-			keyboard.Close()
+			StopKeyboardLogger()
 			if len(currentStr) > 0 {
 				file.WriteString(fmt.Sprintf("%s: WriteChar = %s: String = %s \n \n", time.Now().String(), "keyboard_terminated", currentStr))
 
@@ -52,10 +54,11 @@ func StartKeyboardLogger(logsDirectory string) {
 		}
 		formattedStr := fmt.Sprintf("%q", char)[1 : len(fmt.Sprintf("%q", char))-1]
 		currentStr = currentStr + formattedStr
-		fmt.Printf("You pressed: rune %q, key %X\r\n", char, key)
 	}
 }
 
 func StopKeyboardLogger() {
+	fmt.Printf("Off \n")
+
 	_ = keyboard.Close()
 }
