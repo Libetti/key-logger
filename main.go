@@ -12,7 +12,6 @@ import (
 func main() {
 	var loggerRunning bool = false
 	var logsDirectory string = ""
-	fmt.Println(len(os.Args))
 	if len(os.Args) > 1 {
 		logsDirectory = os.Args[1]
 	} else {
@@ -30,8 +29,7 @@ func main() {
 		}
 	}
 
-	fmt.Println(os.UserHomeDir())
-	fmt.Println(os.Args[0])
+	fmt.Println(logsDirectory)
 
 	for {
 		procs, err := winprocessutils.Processes()
