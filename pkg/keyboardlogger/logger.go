@@ -9,8 +9,9 @@ import (
 	"github.com/eiannone/keyboard"
 )
 
-func StartKeyboardLogger() {
-	file, err := os.OpenFile("log.txt", os.O_APPEND|os.O_WRONLY, 0644)
+func StartKeyboardLogger(logsDirectory string) {
+
+	file, err := os.OpenFile(logsDirectory, os.O_APPEND|os.O_WRONLY, 0644)
 	if err != nil {
 		log.Fatal(err)
 	}

