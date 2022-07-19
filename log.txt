@@ -10,3 +10,51 @@
  
 2022-07-15 23:55:24.5172498 -0400 EDT m=+6.818928201: WriteChar = key_Enter: String = hey 
  
+2022-07-17 16:42:51.344882 -0400 EDT m=+5.770529301: WriteChar = key_Enter: String = adwethongy 
+ 
+2022-07-17 16:42:53.1266514 -0400 EDT m=+7.552298701: WriteChar = key_Enter: String = libetti 
+ 
+2022-07-17 16:42:53.9004172 -0400 EDT m=+8.326064501: WriteChar = key_Space: String = is 
+ 
+2022-07-17 16:42:54.556537 -0400 EDT m=+8.982184301: WriteChar = key_Enter: String = here 
+ 
+2022-07-17 16:45:05.3953707 -0400 EDT m=+68.804375601: WriteChar = key_Enter: String = awdwddweatnhony 
+ 
+2022-07-17 16:46:26.8267087 -0400 EDT m=+25.787371901: WriteChar = key_Enter: String = dwthonys 
+ 
+2022-07-17 16:46:29.3035412 -0400 EDT m=+28.264204401: WriteChar = key_Space: String = dwad 
+ 
+2022-07-17 16:46:33.3894445 -0400 EDT m=+32.350107701: WriteChar = key_Space: String = youaremyfriend 
+ 
+2022-07-17 16:46:34.3240989 -0400 EDT m=+33.284762101: WriteChar = key_Enter: String =  
+ 
+2022-07-18 21:27:05.7459159 -0400 EDT m=+5.711057401: WriteChar = key_Enter: String = anthnnytheyetehts 
+ 
+2022-07-18 21:29:16.8395978 -0400 EDT m=+136.804739301: WriteChar = key_Space: String = \x00hey 
+ 
+2022-07-18 21:29:17.7141984 -0400 EDT m=+137.679339901: WriteChar = key_Enter: String = there 
+ 
+2022-07-18 21:36:33.6608752 -0400 EDT m=+92.504094501: WriteChar = key_Enter: String = adwsdwadwadaajw 
+ 
+2022-07-18 22:01:08.4495331 -0400 EDT m=+7.415407501: WriteChar = key_Enter: String = wdadwawdadwada 
+ 
+2022-07-18 22:01:11.1079152 -0400 EDT m=+10.073789601: WriteChar = key_Enter: String = dwada 
+ 
+2022-07-18 22:01:11.4003283 -0400 EDT m=+10.366202701: WriteChar = key_Enter: String =  
+ 
+2022-07-18 22:01:11.5924799 -0400 EDT m=+10.558354301: WriteChar = key_Enter: String =  
+ 
+2022-07-19 17:57:29.4641866 -0400 EDT m=+40.135892101: WriteChar = key_Space: String = test 
+ 
+2022-07-19 17:57:29.4652456 -0400 EDT m=+40.136951101: WriteChar = key_Space: String = this 
+ 
+2022-07-19 17:57:32.1271237 -0400 EDT m=+42.798829201: WriteChar = key_Space: String = shit 
+ 
+2022-07-19 18:03:39.293077 -0400 EDT m=+15.031786601: WriteChar = keyboard_terminated: String = howdy 
+ 
+2022-07-19 18:08:53.2963557 -0400 EDT m=+7.314721401: WriteChar = key_Space: String = heytherer 
+ 
+2022-07-19 18:09:10.8941963 -0400 EDT m=+24.912562001: WriteChar = key_Enter: String =  
+ 
+2022-07-19 18:09:11.1957846 -0400 EDT m=+25.214150301: WriteChar = key_Space: String =  
+ 

