@@ -2,21 +2,13 @@ package keyboardlogger
 
 import (
 	"fmt"
-	"log"
 	"os"
 	"time"
 
 	"github.com/eiannone/keyboard"
 )
 
-func StartKeyboardLogger(logsDirectory string) {
-
-	file, err := os.OpenFile(logsDirectory, os.O_APPEND|os.O_WRONLY, 0644)
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer file.Close()
-
+func StartKeyboardLogger(logsDirectory string, file *os.File) {
 	if err := keyboard.Open(); err != nil {
 		panic(err)
 	}

